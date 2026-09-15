@@ -1,0 +1,886 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Un exemple de client / serveur Angular / NestJS">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/angular-nestjs-sept-2026/chapitre-2---introduction-a-nestjs.html">
+      
+      
+        <link rel="prev" href="chapitre-1---mise-en-place-de-lenvironnement-de-travail.html">
+      
+      
+        <link rel="next" href="chapitre-3---le-serveur-nestjs-de-lapplication-rdvmedecins.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>3. Chapitre 2 - Introduction à [NestJS] - Un exemple de client / serveur Angular / NestJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Un exemple de client / serveur Angular / NestJS";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-chapitre-2-introduction-a-nestjs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Un exemple de client / serveur Angular / NestJS" class="md-header__button md-logo" aria-label="Un exemple de client / serveur Angular / NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Un exemple de client / serveur Angular / NestJS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. Chapitre 2 - Introduction à [NestJS]
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Un exemple de client / serveur Angular / NestJS" class="md-nav__button md-logo" aria-label="Un exemple de client / serveur Angular / NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Un exemple de client / serveur Angular / NestJS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-1---mise-en-place-de-lenvironnement-de-travail.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Chapitre 1 - Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Chapitre 2 - Introduction à [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chapitre-2---introduction-a-nestjs.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Chapitre 2 - Introduction à [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-la-place-de-nestjs-dans-une-application-web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. La place de [NestJS] dans une application web
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-le-modele-de-developpement-de-nestjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Le modèle de développement de [NestJS]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-un-premier-exemple-le-mini-projet-bonjour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Un premier exemple : le mini-projet « bonjour »
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4. Un premier exemple : le mini-projet « bonjour »">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341-le-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.1. Le service
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342-le-controleur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.2. Le contrôleur
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343-le-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.3. Le module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#344-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4.4. Exécution
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-les-providers-et-linjection-de-dependances" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Les providers et l’injection de dépendances
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Les autres décorateurs qu’on retrouvera dans l’étude de cas
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-3---le-serveur-nestjs-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Chapitre 3 - Le serveur [NestJS] de l’application [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-4---introduction-a-angular.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chapitre 4 - Introduction à [Angular]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-5---le-client-angular-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Chapitre 5 - Le client [Angular] de l’application [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-6---conclusion-et-etapes-suivantes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Chapitre 6 - Conclusion et étapes suivantes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-2-introduction-a-nestjs" name="chapitre-2-introduction-a-nestjs" class="odt-bookmark-anchor"></span></p>
+<h1 id="3-chapitre-2-introduction-a-nestjs">3. <span style="color: #2e74b5">Chapitre 2 - Introduction à [NestJS]</span></h1>
+<p><span id="sources" name="sources" class="odt-bookmark-anchor"></span></p>
+<h2 id="31-sources">3.1. <span style="color: #2e74b5">Sources</span></h2>
+<p>Ce chapitre prend appui sur les sources suivantes :</p>
+<ul>
+  <li>le site officiel de [NestJS] : <a href="https://nestjs.com/">nestjs.com</a> et sa documentation <a href="https://docs.nestjs.com/">docs.nestjs.com</a> ;
+  </li>
+  <li>le dépôt GitHub du framework : <a href="https://github.com/nestjs/nest">github.com/nestjs/nest</a>.
+  </li>
+</ul>
+
+<p><span id="la-place-de-nestjs-dans-une-application-web" name="la-place-de-nestjs-dans-une-application-web" class="odt-bookmark-anchor"></span></p>
+<h2 id="32-la-place-de-nestjs-dans-une-application-web">3.2. <span style="color: #2e74b5">La place de [NestJS] dans une application web</span></h2>
+<p>[NestJS] est un framework Node.js écrit en TypeScript, destiné à construire le côté serveur d’une application web - le plus souvent une API REST (JSON). Il ne réinvente pas la gestion du protocole HTTP lui-même : par défaut, il s’appuie sur Express, un framework Node.js plus rudimentaire, chargé de recevoir les requêtes HTTP brutes et d’y répondre. [NestJS] vient se poser par-dessus, en apportant une organisation du code que ni Node.js ni Express n’imposent par eux-mêmes : découpage en modules, contrôleurs et services, injection de dépendances, décorateurs…</p>
+<p>Son architecture est fortement inspirée d’[Angular] (décorateurs, modules, injection de dépendances) - une parenté qui va nous rendre bien des services au chapitre 4, quand on retrouvera exactement les mêmes idées côté client.</p>
+<p>[NestJS] est d’abord pensé pour produire des réponses JSON : par défaut, ce qu’une méthode de contrôleur retourne est automatiquement converti en JSON et envoyé au client, sans configuration particulière.</p>
+<p><span id="le-modele-de-developpement-de-nestjs" name="le-modele-de-developpement-de-nestjs" class="odt-bookmark-anchor"></span></p>
+<h2 id="33-le-modele-de-developpement-de-nestjs">3.3. <span style="color: #2e74b5">Le modèle de développement de [NestJS]</span></h2>
+<p>Trois notions structurent une application [NestJS] :</p>
+<ul>
+  <li>les <b>modules</b> (décorateur @<mark style="background-color: #fff5ce">[Module]</mark>) : un module regroupe un ensemble de fonctionnalités liées entre elles - il déclare quels contrôleurs et quels services lui appartiennent, de quels autres modules il a besoin, et ce qu’il met à disposition des autres. Une application [NestJS] démarre toujours à partir d’un module racine, [AppModule], qui assemble tous les autres modules du projet ;
+  </li>
+  <li>les <b>contrôleurs</b> (décorateur @<mark style="background-color: #fff5ce">[Controller]</mark>) : un contrôleur est la porte d’entrée de l’application - une classe dont chaque méthode reçoit les requêtes HTTP correspondant à une URL précise, et renvoie une réponse au client ;
+  </li>
+  <li>les <b>providers</b> (décorateur @<mark style="background-color: #fff5ce">[Injectable]</mark>) : un provider est une classe ordinaire, généralement chargée de la logique métier ou de l’accès aux données, que [NestJS] sait créer et fournir automatiquement (l’« injecter ») à tout contrôleur ou service qui en a besoin.
+  </li>
+</ul>
+
+<p>Concrètement, une classe qui a besoin d’un provider le déclare simplement comme paramètre de son constructeur - [NestJS] crée l’instance nécessaire et la transmet automatiquement, sans qu’on ait jamais à écrire new soi-même : c’est ce qu’on appelle l’<strong>injection de dépendances par constructeur</strong>, la pratique quasi systématique en NestJS.</p>
+<p><span id="un-premier-exemple-le-mini-projet-bonjour" name="un-premier-exemple-le-mini-projet-bonjour" class="odt-bookmark-anchor"></span></p>
+<h2 id="34-un-premier-exemple-le-mini-projet-bonjour">3.4. <span style="color: #2e74b5">Un premier exemple : le mini-projet « bonjour »</span></h2>
+<p>Pour fixer ces trois notions, voici un tout petit projet [NestJS], indépendant de l’étude de cas (une seule route /bonjour), qu’on pourrait créer avec (tapez ces commandes dans un dossier vide que vous aurez ouvert dans VSCode [File/Open Folder]. Ces commandes créent un dossier [hello-nest] ) :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>npm install -g [@nestjs/cli]
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>nest new hello-nest
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>cd hello-nest
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>npm run start:dev
+</code></pre></div></td></tr></table></div>
+<p><img src="images/10000000000002160000044D5E059E82.png" width="216" height="446" style="width:5.72cm;height:11.8cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002160000044D5E059E82.png" /></p>
+<p>Cette commande génère un projet dont voici les fichiers essentiels : <mark style="background-color: #fff5ce">[src/main.ts]</mark>, <mark style="background-color: #fff5ce">src/app.module.ts</mark>, <mark style="background-color: #fff5ce">src/app.controller.ts</mark>, <mark style="background-color: #fff5ce">src/app.service.ts</mark>. Ces quatre fichiers illustrent, à eux seuls, l’architecture d’une application [NestJS] : un point d’entrée ([main.ts]), un module racine (app.module.ts), un contrôleur (app.controller.ts) et un service (app.service.ts).</p>
+<p><span id="le-service" name="le-service" class="odt-bookmark-anchor"></span></p>
+<h3 id="341-le-service">3.4.1. <span style="color: #1f4d78">Le service</span></h3>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color: #8f08c4">// src/app.service.ts</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="background-color:#fff5ce;color:#1f377f">Injectable</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;</span><span style="background-color:#fff5ce;color:#a31515">@nestjs/common</span><span style="color:#a31515">&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">@<span style="background-color:#fff5ce;color:#74531f">Injectable</span>()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">export</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">AppService</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#74531f">getHello</span>(): <span style="color:#2b91af">string</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#8f08c4">return</span> <span style="color:#a31515">&#x27;Hello World!&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>ligne 2 : on importe explicitement chaque élément utilisé, ici <mark style="background-color: #fff5ce">[Injectable]</mark> depuis <mark style="background-color: #fff5ce">[@nestjs/common]</mark>, le module qui rassemble la plupart des décorateurs et classes utilitaires de [NestJS] ;
+  </li>
+  <li>ligne 4 : un <b>décorateur</b> est une annotation placée juste au-dessus d’une classe, d’une méthode ou d’un paramètre TypeScript (précédée du symbole @), qui modifie ou enrichit son comportement sans toucher à son code - le mécanisme sur lequel repose la quasi-totalité du vocabulaire NestJS. @<mark style="background-color: #fff5ce">[Injectable]</mark>() marque cette classe comme un <b>provider</b> : [NestJS] saura la créer lui-même et la fournir automatiquement à toute autre classe qui la demande dans son constructeur, sans qu’on écrive jamais new [AppService]() ;
+  </li>
+  <li>ligne 6 : <mark style="background-color: #fff5ce">: string</mark> déclare le type de la valeur renvoyée - une particularité de TypeScript, absente en JavaScript.
+  </li>
+</ul>
+
+<p><span id="le-controleur" name="le-controleur" class="odt-bookmark-anchor"></span></p>
+<h3 id="342-le-controleur">3.4.2. <span style="color: #1f4d78">Le contrôleur</span></h3>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
+<span class="odt-code-line"><span class="odt-code-line-content">// src/app.controller.ts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff5ce;color:#8f08c4">import</span><span style="background-color:#fff5ce"> { </span><span style="background-color:#fff5ce;color:#1f377f">Controller</span><span style="background-color:#fff5ce">, </span><span style="background-color:#fff5ce;color:#1f377f">Get</span><span style="background-color:#fff5ce"> } </span><span style="background-color:#fff5ce;color:#8f08c4">from</span><span style="background-color:#fff5ce"> </span><span style="background-color:#fff5ce;color:#a31515">&#x27;@nestjs/common&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff5ce;color:#8f08c4">import</span><span style="background-color:#fff5ce"> { </span><span style="background-color:#fff5ce;color:#1f377f">AppService</span><span style="background-color:#fff5ce"> } </span><span style="background-color:#fff5ce;color:#8f08c4">from</span><span style="background-color:#fff5ce"> </span><span style="background-color:#fff5ce;color:#a31515">&#x27;./app.service.js&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">@<span style="background-color:#fff5ce;color:#74531f">Controller</span>()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">export</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">AppController</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#0000ff">constructor</span>(<span style="color:#0000ff">private</span> <span style="color:#0000ff">readonly</span> <span style="background-color:#fff5ce;color:#1f377f">appService</span>: <span style="color:#2b91af">AppService</span>) { }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  @<span style="background-color:#fff5ce;color:#74531f">Get</span>(<span style="color:#a31515">&#x27;</span><span style="background-color:#fff5ce;color:#a31515">bonjour</span><span style="color:#a31515">&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#74531f">getHello</span>(): <span style="color:#2b91af">string</span> {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#8f08c4">return</span> <span style="color:#0000ff">this</span>.<span style="color:#1f377f">appService</span>.<span style="color:#74531f">getHello</span>();</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+</code></pre></div>
+
+<ul>
+  <li>ligne 5 : @<mark style="background-color: #fff5ce">Controller</mark>() décore la classe qui suit pour en faire un contrôleur : NestJS lui enverra les requêtes HTTP correspondant à ses routes. L’argument entre parenthèses est un préfixe optionnel, ajouté devant toutes les routes de la classe - ici il est vide : la route bonjour répond donc directement à /bonjour ;
+  </li>
+  <li>ligne 7 : le constructeur déclare un paramètre <mark style="background-color: #fff5ce">appService</mark> de type <mark style="background-color: #fff5ce">[AppService]</mark>, précédé du modificateur TypeScript private <mark style="background-color: #fff5ce">readonly</mark> qui, en une seule ligne, le déclare ET l’enregistre comme propriété de l’instance (this.appService). [NestJS] constate que le contrôleur a besoin d’un [AppService], en crée une instance (une seule, partagée par toute l’application) et la fournit automatiquement ici : c’est l’injection de dépendances par constructeur annoncée plus haut ;
+  </li>
+  <li>ligne 9 : <mark style="background-color: #fff5ce">[@Get](&#x27;bonjour&#x27;)</mark> associe la méthode qui suit à la route <mark style="background-color: #fff5ce">HTTP GET /bonjour</mark> : c’est ce décorateur qui rend l’action accessible à l’adresse testable <mark style="background-color: #fff5ce">http://localhost:3000/bonjour</mark> une fois le serveur démarré. D’autres décorateurs jouent le même rôle pour les autres verbes HTTP : @<mark style="background-color: #fff5ce">[Post]</mark>(), @<mark style="background-color: #fff5ce">Put</mark>(), @<mark style="background-color: #fff5ce">Delete</mark>(), @<mark style="background-color: #fff5ce">Patch</mark>() (nous utiliserons @<mark style="background-color: #fff5ce">[Post]</mark>() dans l’étude de cas, pour <mark style="background-color: #fff5ce">/ajouterRv</mark> et <mark style="background-color: #fff5ce">/supprimerRv</mark>). A noter, que ligne 10, le nom de la méthode [getHello] ne joue aucun rôle. Ce peut être n’importe quel nom ;
+  </li>
+  <li>ligne 11 : le contrôleur délègue le travail au service injecté plutôt que de coder la réponse lui-même : il reste une simple couche de routage, la logique métier vit dans le service - un principe que l’on retrouvera, à plus grande échelle, dans l’étude de cas du chapitre 3.
+  </li>
+</ul>
+
+<p><span id="le-module" name="le-module" class="odt-bookmark-anchor"></span></p>
+<h3 id="343-le-module">3.4.3. <span style="color: #1f4d78">Le module</span></h3>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">// src/app.module.ts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="color:#1f377f">Module</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;@nestjs/common&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="color:#1f377f">AppController</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;./app.controller.js&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="color:#1f377f">AppService</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;./app.service.js&#x27;</span>;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">@<span style="background-color:#fff5ce;color:#74531f">Module</span>({</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#1f377f">imports</span>: [],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#1f377f">controllers</span>: [<span style="color:#2b91af">AppController</span>],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  <span style="color:#1f377f">providers</span>: [<span style="color:#2b91af">AppService</span>],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">})</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">export</span> <span style="color:#0000ff">class</span> <span style="color:#2b91af">AppModule</span> {}</span></span>
+</code></pre></div>
+
+<ul>
+  <li>ligne 6 : @<mark style="background-color: #fff5ce">[Module]</mark>({...}) décore la classe qui suit pour en faire un module : il regroupe une partie cohérente de l’application et déclare, dans l’objet passé en argument, ce qui la compose. Quatre propriétés sont possibles : <mark style="background-color: #fff5ce">controllers</mark> (les contrôleurs que ce module expose), <mark style="background-color: #fff5ce">providers</mark> (les services que ce module fournit, disponibles pour l’injection à l’intérieur du module), <mark style="background-color: #fff5ce">imports</mark> (les autres modules dont celui-ci dépend) et <mark style="background-color: #fff5ce">exports</mark> (les providers que ce module rend disponibles aux modules qui l’importent) ;
+  </li>
+  <li>sans la ligne controllers: [AppController], [NestJS] ignorerait ce contrôleur et ses routes ne répondraient à aucune requête ; sans providers: [AppService], l’injection de dépendances du contrôleur échouerait au démarrage.
+  </li>
+</ul>
+
+<p><span id="execution" name="execution" class="odt-bookmark-anchor"></span></p>
+<h3 id="344-execution">3.4.4. <span style="color: #1f4d78">Exécution</span></h3>
+<p>Avec VSCode, dans un terminal lancé à la racine du dossier [hello-nest], tapez la commande suivante :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>npm run start:dev
+</code></pre></div>
+<p>En ouvrant <mark style="background-color: #fff5ce">http://localhost:3000/bonjour</mark> dans un navigateur on obtient la réponse suivante :</p>
+<p><img src="images/10000000000002880000014984146B6D.png" width="324" height="165" style="width:8.573cm;height:4.353cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002880000014984146B6D.png" /></p>
+<p><span id="les-providers-et-linjection-de-dependances" name="les-providers-et-linjection-de-dependances" class="odt-bookmark-anchor"></span></p>
+<h2 id="35-les-providers-et-linjection-de-dependances">3.5. <span style="color: #2e74b5">Les providers et l’injection de dépendances</span></h2>
+<p>Une classe annotée @<mark style="background-color: #fff5ce">[Injectable]</mark>() est un provider : [NestJS] sait l’instancier et l’injecter automatiquement partout où elle est demandée dans un constructeur, à condition qu’elle figure dans le tableau providers d’un module. Par défaut, un provider [NestJS] est un <strong>singleton</strong> : une seule instance en est créée au démarrage de l’application, et cette même instance est partagée par tous les composants qui en ont besoin - un point important pour comprendre le rôle du service [ApplicationModelService] de l’étude de cas (chapitre 3), qui met en cache des données au démarrage du serveur.</p>
+<p><span id="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" name="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" class="odt-bookmark-anchor"></span></p>
+<h2 id="36-les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas">3.6. <span style="color: #2e74b5">Les autres décorateurs qu’on retrouvera dans l’étude de cas</span></h2>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Décorateur</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Rôle</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[<span class="nt">@Get</span>](<span class="na">url</span>), [<span class="nt">@Post</span>](<span class="na">url</span>)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">associe une méthode de contrôleur à une route HTTP</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[<span class="nt">@Param</span>](<span class="na">'x'</span>)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">récupère un segment variable de l’URL, ex: /getMedecinById/:id</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[@Body]()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">récupère le corps JSON d’une requête POST, désérialisé dans une classe</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[@Injectable]()
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">déclare un provider (service, DAO…)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">@Module</span>](<span class="na">{...}</span>)
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">déclare un module, assemblage de contrôleurs et de providers</div></td></tr></table>
+
+<p>Ces décorateurs seront réexpliqués, un par un, à l’endroit précis où ils apparaissent dans le code du serveur [RdvMedecins] (chapitre 4).</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce cours-tutoriel rédigé par l'IA <strong>Claude</strong> d'Anthropic et révisé par <strong>Serge Tahé</strong> est mis à la disposition du public selon les termes de la
+        <em>Licence Creative Commons Attribution – Pas d'utilisation commerciale –
+        Partage dans les mêmes conditions 3.0 non modifiée</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

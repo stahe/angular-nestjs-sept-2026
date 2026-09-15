@@ -1,0 +1,1170 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Un exemple de client / serveur Angular / NestJS">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/angular-nestjs-sept-2026/chapitre-1---mise-en-place-de-lenvironnement-de-travail.html">
+      
+      
+        <link rel="prev" href="introduction.html">
+      
+      
+        <link rel="next" href="chapitre-2---introduction-a-nestjs.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. Chapitre 1 - Mise en place de l’environnement de travail - Un exemple de client / serveur Angular / NestJS</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "Un exemple de client / serveur Angular / NestJS";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="Un exemple de client / serveur Angular / NestJS" class="md-header__button md-logo" aria-label="Un exemple de client / serveur Angular / NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Un exemple de client / serveur Angular / NestJS
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Chapitre 1 - Mise en place de l’environnement de travail
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode sombre"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode sombre" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Passer en mode clair"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode clair" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Un exemple de client / serveur Angular / NestJS" class="md-nav__button md-logo" aria-label="Un exemple de client / serveur Angular / NestJS" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Un exemple de client / serveur Angular / NestJS
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/angular-nestjs-sept-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Accueil
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="introduction.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Introduction
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Chapitre 1 - Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="chapitre-1---mise-en-place-de-lenvironnement-de-travail.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Chapitre 1 - Mise en place de l’environnement de travail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-installer-les-outils" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. Installer les outils
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-creer-la-base-de-donnees" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Créer la base de données
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-lancer-le-serveur-nestjs-pour-la-premiere-fois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. Lancer le serveur [NestJS] pour la première fois
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-tester-le-serveur-avec-un-navigateur" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. Tester le serveur avec un navigateur
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-tester-le-serveur-nestjs-avec-postman" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Tester le serveur [NestJS] avec Postman
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Tester le serveur [NestJS] avec Postman">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-se-connecter-et-obtenir-un-jeton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. Se connecter et obtenir un jeton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-appeler-une-route-protegee-avec-le-jeton" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. Appeler une route protégée avec le jeton
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#253-tester-les-routes-post-ajouterrv-supprimerrv" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.3. Tester les routes POST (/ajouterRv, /supprimerRv)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-lancer-le-client-angular-pour-la-premiere-fois" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. Lancer le client [Angular] pour la première fois
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-2---introduction-a-nestjs.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Chapitre 2 - Introduction à [NestJS]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-3---le-serveur-nestjs-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Chapitre 3 - Le serveur [NestJS] de l’application [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-4---introduction-a-angular.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Chapitre 4 - Introduction à [Angular]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-5---le-client-angular-de-lapplication-rdvmedecins.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Chapitre 5 - Le client [Angular] de l’application [RdvMedecins]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="chapitre-6---conclusion-et-etapes-suivantes.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Chapitre 6 - Conclusion et étapes suivantes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="chapitre-1-mise-en-place-de-lenvironnement-de-travail" name="chapitre-1-mise-en-place-de-lenvironnement-de-travail" class="odt-bookmark-anchor"></span></p>
+<h1 id="2-chapitre-1-mise-en-place-de-lenvironnement-de-travail">2. <span style="color: #2e74b5">Chapitre 1 - Mise en place de l’environnement de travail</span></h1>
+<p><span id="installer-les-outils" name="installer-les-outils" class="odt-bookmark-anchor"></span></p>
+<h2 id="21-installer-les-outils">2.1. <span style="color: #2e74b5">Installer les outils</span></h2>
+<ol>
+  <li><b>Node.js</b> : télécharger et installer la version 22 (ou plus récente) depuis <a href="https://nodejs.org/">nodejs.org</a>. Vérifier l’installation dans un terminal :
+  </li>
+</ol>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>node --version
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>npm --version
+</code></pre></div></td></tr></table></div>
+<ol>
+  <li><b>Visual Studio Code</b> (VSCode) : téléchargeable gratuitement sur <a href="https://code.visualstudio.com/">code.visualstudio.com</a>. Installer l’extension « TypeScript and JavaScript Language Features » (généralement déjà intégrée).
+  </li>
+  <li><b>[NestJS] CLI</b> et <b>[Angular] CLI</b>, deux outils en ligne de commande installés une bonne fois pour toutes. Dans un terminal de VSCode :
+  </li>
+</ol>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>npm install -g @nestjs/cli
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>npm install -g @angular/cli
+</code></pre></div></td></tr></table></div>
+<ol>
+  <li><b>[MySQL] 8</b> : installer par exemple via <a href="https://www.apachefriends.org/">XAMPP</a>, <a href="https://laragon.org/">Laragon</a> (sous Windows) ou directement <a href="https://dev.mysql.com/downloads/mysql/">[MySQL] Community Server</a>. Un outil d’administration graphique (phpMyAdmin, [MySQL] Workbench, DBeaver, HeidiSQL…) facilite la suite. Par la suite, l’outil Laragon est utilisé.
+  </li>
+  <li><b>Postman</b> : téléchargeable gratuitement sur <a href="https://www.postman.com/downloads/">postman.com</a>.
+  </li>
+</ol>
+
+<p>Si vous avez téléchargé les codes, ceux-ci sont présents dans deux dossiers :</p>
+<p><img src="images/10000000000001BB000000FDC84E68FF.png" width="222" height="127" style="width:5.861cm;height:3.348cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB000000FDC84E68FF.png" /></p>
+<ul>
+  <li>en [1], le client [Angular] ;
+  </li>
+  <li>en [2], le serveur [NestJS] ;
+  </li>
+</ul>
+
+<p>Ouvrez le dossier [2] avec Visual Studio [File / Open Folder] :</p>
+<p><img src="images/10000000000002530000028174CA6D63.png" width="298" height="321" style="width:7.872cm;height:8.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002530000028174CA6D63.png" /></p>
+<p><span id="creer-la-base-de-donnees" name="creer-la-base-de-donnees" class="odt-bookmark-anchor"></span></p>
+<h2 id="22-creer-la-base-de-donnees">2.2. <span style="color: #2e74b5">Créer la base de données</span></h2>
+<p>Pour créer la base de données [MySQL] utilisée par le serveur [NestJS], nous allons utiliser l’outil Laragon. En septembre 2026, Laragon est disponible à l’URL [<a href="https://laragon.org/download">Download Laragon – Fast &amp; Modern Dev Environment</a> ]. Laragon amène avec lui des outils qui permettent d’installer un serveur PHP et le SGBD [MySQL] :</p>
+<p><img src="images/10000000000006440000030C86481A8B.png" width="643" height="312" style="width:17cm;height:8.266cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C86481A8B.png" /></p>
+<ul>
+  <li>en [1], un serveur web Apache ;
+  </li>
+  <li>en [2], le SGBD [MySQL] ;
+  </li>
+  <li>en [3], un outil de messagerie que nous n’utiliserons pas ;
+  </li>
+  <li>en [4], lance tous les services (Apache, [MySQL], MailPit) ;
+  </li>
+  <li>en [5], affiche la page web d’URL [<a href="http://localhost/">http://localhost</a>]. Par défaut, cette URL désigne le dossier &lt;laragon-install&gt;\www où &lt;laragon-install&gt; est le dossier d’installation de Laragon ;
+  </li>
+  <li>en [6], lance l’Outil HeidiSQL qui permet de gérer des bases de données MySQL. C’est avec cet outil que nous créerons la base de données utilisée par le serveur de calcul de l’impôt ;
+  </li>
+  <li>en [7], ouvre un terminal dans lequel tous les binaires utiles à Laragon sont dans le PATH ;
+  </li>
+  <li>en [8], ouvre un explorateur windows dans le dossier associé à l’URL [http://localhost] ;
+  </li>
+</ul>
+
+<p>Le dossier d’installation de Laragon comporte les éléments suivants :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DB00000324CA05B23E.png" width="314" height="345" style="display:inline-block; margin:4px;width:8.306cm;height:9.133cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DB00000324CA05B23E.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>En [1], le dossier [bin] contient de nombreuses applications :
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/1000000000000329000004CE02139058.png" width="404" height="615" style="display:inline-block; margin:4px;width:10.7cm;height:16.27cm;" class="odt-zoomable" data-zoom-src="images/1000000000000329000004CE02139058.png" /></td></tr></table>
+
+<ul>
+  <li>En [1], le serveur web Apache ;
+  </li>
+  <li>en [2], un terminal de commandes ;
+  </li>
+  <li>en [3], un client [git] permettant de versionner les différentes versions d’un projet ;
+  </li>
+  <li>en [4], un gestionnaire de bases de données ;
+  </li>
+  <li>en [5], un gestionnaire courrier ;
+  </li>
+  <li>en [6], le SGBD [MySQL] ;
+  </li>
+  <li>en [7], un autre serveur web ;
+  </li>
+  <li>en [8], [node.js] pour exécuter des scripts Javascript ;
+  </li>
+  <li>en [9], un éditeur de texte ;
+  </li>
+  <li>en [10], l’interpréteur PHP ;
+  </li>
+  <li>en [11], l’interpréteur [Python] ;
+  </li>
+  <li>en [12], un serveur de cache ;
+  </li>
+</ul>
+
+<p>Laragon ramène avec lui un environnement de développement conséquent. Dans ce cours, nous n’utiliserons que le SGBD [MySQL] [6] et [heidisql] pour le gérer graphiquement ;</p>
+<p>Pour créer la base de données [MySQL] nécessaire au serveur [NestJS], nous procédons de la façon suivante :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000006440000030C352A3F89.png" width="503" height="244" style="display:inline-block; margin:4px;width:13.301cm;height:6.468cm;" class="odt-zoomable" data-zoom-src="images/10000000000006440000030C352A3F89.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;">&nbsp;</td></tr></table>
+
+<ul>
+  <li>En [1], tous les services doivent être lancés ;
+  </li>
+  <li>en [2], l’option [Database] vous permet de gérer la base de données ;
+  </li>
+</ul>
+
+<p>L’option [Database] lance un utilitaire appelé HeidiSQL :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000008D2000003C91FBD37B4.png" width="621" height="266" style="display:inline-block; margin:4px;width:16.431cm;height:7.05cm;" class="odt-zoomable" data-zoom-src="images/10000000000008D2000003C91FBD37B4.png" /></td></tr></table>
+
+<ul>
+  <li>En [1], vous pouvez sélectionner divers SGBD. La valeur par défaut proposée est le SGBD MySQL. Cela convient ;
+  </li>
+  <li>en [2], vous ouvrez une session de HeidiSQL ;
+  </li>
+</ul>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000003FD0000018A35CBA47C.png" width="357" height="138" style="display:inline-block; margin:4px;width:9.449cm;height:3.649cm;" class="odt-zoomable" data-zoom-src="images/10000000000003FD0000018A35CBA47C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002A4000001C70316A390.png" width="237" height="159" style="display:inline-block; margin:4px;width:6.26cm;height:4.21cm;" class="odt-zoomable" data-zoom-src="images/10000000000002A4000001C70316A390.png" /></td></tr></table>
+
+<ul>
+  <li>En [1-2], exécutez un fichier SQL puis choisissez le fichier [create_dbimpots.sql] que vous trouverez dans le dossier [nestjs-etude-de-cas] :
+  </li>
+</ul>
+
+<p><img src="images/10000000000001CA000002F2946B0D5A.png" width="198" height="324" style="width:5.226cm;height:8.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001CA000002F2946B0D5A.png" /></p>
+<p>L’exécution du fichier [3] va créer la base [dbrdvmedecins] utilisée par le serveur [NestJS]. Pour le voir, faites F5 dans HeidiSQL pour rafraîchir l’affichage :</p>
+<p><img src="images/10000000000002A50000031EFB250513.png" width="213" height="250" style="width:5.639cm;height:6.609cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002A50000031EFB250513.png" /></p>
+<p>La base de données [dbrdvmedecins] a été créée. On peut en voir le contenu :</p>
+<p><img src="images/100000000000053F00000271DC17B512.png" width="602" height="280" style="width:15.921cm;height:7.408cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053F00000271DC17B512.png" /></p>
+<ul>
+  <li>en [1-3], la table [clients] ;
+    <ul>
+      <li>[id] est la clé primaire de la table ;
+      </li>
+      <li>[version] est le numéro de version de la ligne. Ce numéro augmente à chaque modification de la ligne ;
+      </li>
+      <li>[titre, nom, prenom] identifient la personne ;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000052A0000026BD3179386.png" width="602" height="282" style="width:15.921cm;height:7.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052A0000026BD3179386.png" /></p>
+<ul>
+  <li>en [1-3], la table [medecins] ;
+    <ul>
+      <li>[id] est la clé primaire de la table ;
+      </li>
+      <li>[version] est le numéro de version de la ligne ;
+      </li>
+      <li>[titre, nom, prenom] identifient la personne ;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005FE000002C6FB6943F4.png" width="602" height="278" style="width:15.921cm;height:7.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005FE000002C6FB6943F4.png" /></p>
+<ul>
+  <li>en [1-3], la table des créneaux horaires de consultation des médecins :
+    <ul>
+      <li>[id] : clé primaire ;
+      </li>
+      <li>[version] : numéro de version de la ligne ;
+      </li>
+      <li>[id-medecin] : clé étrangère ciblée sur la clé primaire du médecin ;
+      </li>
+      <li>[hdebut, mdebut] : heure et minutes de début de la consultation. Ainsi [8,20] signifie 8h20.
+      </li>
+      <li>[hfin, mfin] : heure et minutes de fin de la consultation. 
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/10000000000005EB0000024E23D6EF19.png" width="602" height="234" style="width:15.921cm;height:6.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EB0000024E23D6EF19.png" /></p>
+<ul>
+  <li>En [1-3], la table [rv] des rendez-vous pris ;
+    <ul>
+      <li>[id] : clé primaire ;
+      </li>
+      <li>[version] : numéro de version ;
+      </li>
+      <li>[jour] : jour du rendez-vous ;
+      </li>
+      <li>[id_creneau] : clé étrangère vers la clé primaire du créneau horaire du rendez-vous. Comme un créneau horaire est lié à un médecin, on sait quel médecin assure ce rendez-vous ;
+      </li>
+      <li>[id_client] : clé étrangère vers le numéro (clé primaire) du client qui consulte ;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><img src="images/100000000000066300000266A61EA136.png" width="602" height="226" style="width:15.921cm;height:5.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000066300000266A61EA136.png" /></p>
+<ul>
+  <li>en [1-3], la table [users] qui liste les utilisateurs autorisés à utiliser l’application [NestJS] ;
+    <ul>
+      <li>[id, version] : clé primaire, numéro de version ;
+      </li>
+      <li>[login, password] : identifiants de l’utilisateur ;
+      </li>
+      <li>[nom] : nom donné à l’utilisateur ;
+      </li>
+      <li>[role] : son rôle. [ADMIN] a tous les droits. [USER] n’a que des droits de lecture. Il pourra consulter l’agenda d’un médecin mais pas prendre / annuler un rendez-vous ;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><span id="lancer-le-serveur-nestjs-pour-la-premiere-fois" name="lancer-le-serveur-nestjs-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="23-lancer-le-serveur-nestjs-pour-la-premiere-fois">2.3. <span style="color: #2e74b5">Lancer le serveur [NestJS] pour la première fois</span></h2>
+<p>Dans le dossier [rdvmedecins-nestjs-server], tapez les commandes suivantes dans un terminal :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>npm install
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>cp .env.example .env
+</code></pre></div></td></tr></table></div>
+<p>Le fichier [.env] fixe des variables d’environnement :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="gh"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="gh"># Fichier d'exemple de configuration.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="gh"># Copier ce fichier en [.env] puis adapter les valeurs à votre machine.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="gh"># Le fichier [.env] ne doit jamais être partagé ou commité (mots de passe).</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="gh"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="gh"># port d'écoute du serveur NestJS (le serveur Spring original écoutait sur 8080)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>PORT=8080
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="gh"># paramètres de connexion à la base de données MySQL [dbrdvmedecins]</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>DB_HOST=localhost
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>DB_PORT=3306
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>DB_USERNAME=root
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>DB_PASSWORD=
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>DB_DATABASE=dbrdvmedecins
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="gh"># en développement uniquement : TypeORM peut créer/mettre à jour automatiquement</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="gh"># les tables à partir des entités. On le désactive ici car nous fournissons notre</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="gh"># propre script SQL [database/dbrdvmedecins.sql], comme le faisait le projet Spring original.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>DB_SYNCHRONIZE=false
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="gh"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="gh"># authentification (cf. src/auth/)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="gh"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="gh"># clé secrète utilisée pour signer/vérifier les jetons JWT - à changer</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="gh"># impérativement en production (une longue chaîne aléatoire, jamais commitée).</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>JWT_SECRET=change-moi-en-une-longue-chaine-aleatoire
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="gh"># durée de validité d'un jeton JWT (cf. la documentation de la librairie [ms] :</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="gh"># "60", "2h", "7d"...)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>JWT_EXPIRES_IN=2h
+</code></pre></div></td></tr></table></div>
+<p>Adapter le fichier .env fraîchement créé à votre installation [MySQL] (utilisateur, mot de passe, port). Ce fichier contient aussi, depuis l’ajout de l’authentification (cf. chapitre 3), une clé JWT_SECRET : la valeur d’exemple convient pour suivre ce document, mais devra impérativement être remplacée par une chaîne aléatoire propre à vous avant tout usage réel.</p>
+<p>Démarrer ensuite le serveur :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>npm run start:dev
+</code></pre></div></td></tr></table></div>
+<p>La console affiche, dans l’ordre : le démarrage du module [NestJS], la liste des routes exposées par le contrôleur, puis la confirmation du démarrage :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RoutesResolver</span><span class="w"> </span><span class="n">AuthController</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="p">}:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">login</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RoutesResolver</span><span class="w"> </span><span class="n">RdvMedecinsController</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="p">}:</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllMedecins</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllClients</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllCreneaux</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getRvMedecinJour</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="o">/</span><span class="p">:</span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAgendaMedecinJour</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="o">/</span><span class="p">:</span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getMedecinById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getClientById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getCreneauById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getRvById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">ajouterRv</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">supprimerRv</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">NestApplication</span><span class="w"> </span><span class="n">Nest</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">successfully</span><span class="w"> </span><span class="n">started</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="o">[</span><span class="n">RdvMedecins</span><span class="o">]</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="n">NestJS</span><span class="w"> </span><span class="n">démarré</span><span class="w"> </span><span class="n">sur</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:8080</span>
+</code></pre></div></td></tr></table></div>
+<p>Ce relevé de console confirme que le serveur écoute bien sur le port 8080 - <strong>exactement le même port que le serveur Spring Boot du document original</strong>, choisi volontairement pour cette raison.</p>
+<p><span id="tester-le-serveur-avec-un-navigateur" name="tester-le-serveur-avec-un-navigateur" class="odt-bookmark-anchor"></span></p>
+<h2 id="24-tester-le-serveur-avec-un-navigateur">2.4. <span style="color: #2e74b5">Tester le serveur avec un navigateur</span></h2>
+<p>Depuis l’ajout de l’authentification (chapitre 3), <strong>toutes</strong> les routes de RdvMedecinsController exigent un jeton JWT valide : un navigateur, seul, ne permet donc plus de les tester directement. Par exemple :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>http://localhost:[8080/getAllMedecins]
+</code></pre></div></td></tr></table></div>
+<p>renvoie désormais, sans jeton, une erreur 401 Unauthorized :</p>
+<p><img src="images/100000000000048A000001AAB838806D.png" width="581" height="213" style="width:15.372cm;height:5.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000048A000001AAB838806D.png" /></p>
+<p>C’est le comportement attendu : cette réponse confirme que le serveur protège bien ses routes. Postman (section suivante) est nécessaire pour obtenir un jeton, puis pour l’utiliser.</p>
+<p><span id="tester-le-serveur-avec-postman" name="tester-le-serveur-avec-postman" class="odt-bookmark-anchor"></span></p>
+<h2 id="25-tester-le-serveur-nestjs-avec-postman">2.5. <span style="color: #2e74b5">Tester le serveur [NestJS] avec Postman</span></h2>
+<p>L’outil Postman est disponible à l’URL [<a href="https://www.postman.com/downloads/">https://www.postman.com/downloads/</a>]. Vous aurez peut-être à créer un compte.</p>
+<p>Lancez tous les services de Laragon, puis ouvrez l’application de bureau Postman :</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/10000000000002DD000001CDECEE907C.png" width="294" height="184" style="display:inline-block; margin:4px;width:7.766cm;height:4.881cm;" class="odt-zoomable" data-zoom-src="images/10000000000002DD000001CDECEE907C.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><img src="images/100000000000020D0000014C25D78584.png" width="263" height="166" style="display:inline-block; margin:4px;width:6.946cm;height:4.392cm;" class="odt-zoomable" data-zoom-src="images/100000000000020D0000014C25D78584.png" /></td></tr></table>
+
+<ul>
+  <li>En [1-2], créez une requête HTTP pour interroger le serveur de gestion des rendez-vous des médecins ;
+  </li>
+</ul>
+
+<p><span id="se-connecter-et-obtenir-un-jeton" name="se-connecter-et-obtenir-un-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="251-se-connecter-et-obtenir-un-jeton">2.5.1. <span style="color: #1f4d78">Se connecter et obtenir un jeton</span></h3>
+<ol>
+  <li>créer une nouvelle requête Postman, méthode <b>POST</b>, URL <mark style="background-color: #fff5ce">http://localhost:8080/login</mark> ;
+  </li>
+  <li>dans l’onglet <b>[Body]</b>, choisir <b>raw</b> puis le format <b>JSON</b>, et saisir : {<mark style="background-color: #fff5ce">&quot;login&quot;: &quot;admin&quot;, &quot;password&quot;: &quot;admin&quot;</mark>} (ou user/user pour tester le rôle USER) ;
+  </li>
+  <li>envoyer la requête.
+  </li>
+</ol>
+
+<p><img src="images/100000000000057C000004484B69727F.png" width="602" height="470" style="width:15.921cm;height:12.427cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000057C000004484B69727F.png" /></p>
+<ul>
+  <li>en [1-2], la requête POST au serveur [NestJS] qui oeuvre sur le port 8080 ;
+  </li>
+  <li>en [3-5], le corps de la requête. Celle-ci transmet au serveur la chaîne JSON des identifiants de l’utilisateur qui veut se connecter, ici admin/admin ;
+  </li>
+  <li>en [6], la réponse du serveur ;
+  </li>
+  <li>en [7], le jeton d’authentification que les requêtes ultérieures doivent envoyer au serveur pour dire “je me suis déjà authentifié” ;
+  </li>
+</ul>
+
+<p>Copiez la valeur de accessToken : c’est ce jeton qu’il faut désormais présenter à chaque requête suivante. Ci-dessus le jeton à copier est “eyJ...zoM” (sans les “).</p>
+<p><span id="appeler-une-route-protegee-avec-le-jeton" name="appeler-une-route-protegee-avec-le-jeton" class="odt-bookmark-anchor"></span></p>
+<h3 id="252-appeler-une-route-protegee-avec-le-jeton">2.5.2. <span style="color: #1f4d78">Appeler une route protégée avec le jeton</span></h3>
+<p>Pour <mark style="background-color: #fff5ce">GET /getAllMedecins</mark> (ou toute autre route de RdvMedecinsController), ajouter dans Postman, onglet <strong>Authorization</strong>, le type <strong>Bearer Token</strong>, et coller le jeton copié ci-dessus (Postman ajoute alors lui-même l’entête Authorization: Bearer &lt;jeton&gt;).</p>
+<p><img src="images/10000000000005590000054A64AFF51E.png" width="602" height="595" style="width:15.921cm;height:15.744cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005590000054A64AFF51E.png" /></p>
+<ul>
+  <li>en [1-2], la requête envoyée au serveur. Elle demande la liste des médecins en base de données ;
+  </li>
+  <li>en [3-5], la requête doit envoyer le jeton d’authentification. En [4], choisissez [Bearer Token] et en [5] collez le jeton d’authentification que vous avez copié précédemment ;
+  </li>
+  <li>en [7], la réponse du serveur ;
+  </li>
+</ul>
+
+<p><span id="tester-les-routes-post-ajouterrv-supprimerrv" name="tester-les-routes-post-ajouterrv-supprimerrv" class="odt-bookmark-anchor"></span></p>
+<h3 id="253-tester-les-routes-post-ajouterrv-supprimerrv">2.5.3. <span style="color: #1f4d78">Tester les routes POST (/ajouterRv, /supprimerRv)</span></h3>
+<p>Même démarche que ci-dessus (méthode POST, corps JSON, jeton en Bearer Token), exactement comme le document original utilisait le complément Chrome « Advanced Rest [Client] » pour les mêmes routes.</p>
+<p>Note : vous pouvez retrouver les requêtes Postman qui suivent dans la collection [rdvmedecins-nestJS.postman_collection.json] :</p>
+<p><img src="images/100000000000029C0000030B2B251723.png" width="334" height="390" style="width:8.837cm;height:10.306cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000029C0000030B2B251723.png" /></p>
+<p>Dans Postman, faire Ctrl-0 pour charger la collection :</p>
+<p><img src="images/10000000000005F4000002A81D1A727B.png" width="602" height="268" style="width:15.921cm;height:7.103cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005F4000002A81D1A727B.png" /></p>
+<ul>
+  <li>cliquez sur [1] pour charger la collection et sélectionnez le fichier de la collection. Une fois chargée la collection, celle-ci expose ses requêtes :
+  </li>
+</ul>
+
+<p><img src="images/10000000000003FC00000334CABD0B35.png" width="510" height="410" style="width:13.494cm;height:10.848cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003FC00000334CABD0B35.png" /></p>
+<p>Pour tester <mark style="background-color: #fff5ce">/ajouterRv</mark> avec le jeton d’un compte <strong>ADMIN</strong> :</p>
+<ol>
+  <li>requête Postman, méthode <b>POST</b>, URL http://localhost:8080/ajouterRv ;
+  </li>
+  <li>onglet <b>Authorization</b> : Bearer Token, jeton de admin ;
+  </li>
+  <li>onglet <b>[Body]</b>, raw, JSON : {&quot;jour&quot;: &quot;2026-09-13&quot;, &quot;idClient&quot;: 1, &quot;idCreneau&quot;: 5} ;
+  </li>
+  <li>envoyer la requête.
+  </li>
+</ol>
+
+<p><img src="images/100000000000058A00000529ABEBAFF4.png" width="602" height="561" style="width:15.921cm;height:14.831cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058A00000529ABEBAFF4.png" /></p>
+<p>Vous pouvez vérifier avec HeidiSQL qu’un rendez-vous a été ajouté en base :</p>
+<p><img src="images/10000000000006A400000266AF435029.png" width="602" height="218" style="width:15.921cm;height:5.77cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006A400000266AF435029.png" /></p>
+<p>Pour tester <mark style="background-color: #fff5ce">/supprimerRv</mark>, la même démarche s’applique avec le corps {&quot;idRv&quot;: 2} (l’identifiant du rendez-vous à annuler (8) ci-dessus).</p>
+<p><img src="images/100000000000058D0000034C0DB83F3D.png" width="602" height="357" style="width:15.921cm;height:9.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D0000034C0DB83F3D.png" /></p>
+<ul>
+  <li>en [4], ci-dessus le numéro du rendez-vous à supprimer ;
+  </li>
+</ul>
+
+<p><img src="images/10000000000005B2000003C2245B59CC.png" width="602" height="397" style="width:15.921cm;height:10.504cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005B2000003C2245B59CC.png" /></p>
+<ul>
+  <li>en [5-7], le jeton d’authentification ;
+  </li>
+  <li>en [9], la réponse du serveur. [status=0] signifie que l’opération s’est bien déroulée. Vous pouvez le vérifier avec HeidiSQL :
+  </li>
+</ul>
+
+<p><img src="images/100000000000058D000002644C63689A.png" width="602" height="259" style="width:15.921cm;height:6.856cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D000002644C63689A.png" /></p>
+<ul>
+  <li>en [3], le rendez-vous n° 2 n’existe plus ;
+  </li>
+</ul>
+
+<p><strong>À essayer</strong> : refaire cette même requête /ajouterRv avec le jeton du compte <strong>USER</strong> (user/user) plutôt que celui de admin : la réponse devient 403 Forbidden, avec le message le rôle [USER] ne permet pas cette action (rôle requis : ADMIN) - la démonstration concrète du contrôle d’accès par rôle mis en place au chapitre 3.</p>
+<p><span id="lancer-le-client-angular-pour-la-premiere-fois" name="lancer-le-client-angular-pour-la-premiere-fois" class="odt-bookmark-anchor"></span></p>
+<h2 id="26-lancer-le-client-angular-pour-la-premiere-fois">2.6. <span style="color: #2e74b5">Lancer le client [Angular] pour la première fois</span></h2>
+<p>Dans le dossier rdvmedecins-angular-client (le serveur [NestJS] devant être démarré au préalable) :</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>npm install
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>npm start
+</code></pre></div></td></tr></table></div>
+<p>Puis ouvrir <mark style="background-color: #fff5ce">http://localhost:4200</mark> dans un navigateur : l’écran de connexion s’affiche en premier (cf. Chapitre 5).</p>
+<p><img src="images/100000000000047D000004FB67E763FF.png" width="345" height="382" style="width:9.119cm;height:10.119cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047D000004FB67E763FF.png" /></p>
+<ul>
+  <li>en [1], l’URL du serveur qui délivre l’application [Angular] ;
+  </li>
+  <li>en [2], l’URL du serveur [NestJS] qui gère la base [rdvmedecins] ;
+  </li>
+</ul>
+
+<p>Il est important de comprendre qu’il y a ici deux serveurs web, l’un d’eux étant client de l’autre.</p>
+<p>Deux boutons « FR »/« EN », en haut à droite, permettent de basculer l’interface en anglais, y compris avant toute connexion. Se connecter avec l’un des deux comptes de démonstration (admin/admin, accès complet, ou user/user, lecture seule) pour accéder au reste de l’application. Le chapitre 5 détaille l’utilisation complète de ce client, avec les captures d’écran de chaque étape.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        Ce cours-tutoriel rédigé par l'IA <strong>Claude</strong> d'Anthropic et révisé par <strong>Serge Tahé</strong> est mis à la disposition du public selon les termes de la
+        <em>Licence Creative Commons Attribution – Pas d'utilisation commerciale –
+        Partage dans les mêmes conditions 3.0 non modifiée</em>.
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
