@@ -712,7 +712,7 @@
 <p>Cette commande génère un projet dont voici les fichiers essentiels : <mark style="background-color: #fff5ce">[src/main.ts]</mark>, <mark style="background-color: #fff5ce">src/app.module.ts</mark>, <mark style="background-color: #fff5ce">src/app.controller.ts</mark>, <mark style="background-color: #fff5ce">src/app.service.ts</mark>. Ces quatre fichiers illustrent, à eux seuls, l’architecture d’une application [NestJS] : un point d’entrée ([main.ts]), un module racine (app.module.ts), un contrôleur (app.controller.ts) et un service (app.service.ts).</p>
 <p><span id="le-service" name="le-service" class="odt-bookmark-anchor"></span></p>
 <h3 id="341-le-service">3.4.1. <span style="color: #1f4d78">Le service</span></h3>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color: #8f08c4">// src/app.service.ts</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="background-color:#fff5ce;color:#1f377f">Injectable</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;</span><span style="background-color:#fff5ce;color:#a31515">@nestjs/common</span><span style="color:#a31515">&#x27;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"></span></span>
@@ -765,7 +765,7 @@
 
 <p><span id="le-module" name="le-module" class="odt-bookmark-anchor"></span></p>
 <h3 id="343-le-module">3.4.3. <span style="color: #1f4d78">Le module</span></h3>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-typescript">
 <span class="odt-code-line"><span class="odt-code-line-content">// src/app.module.ts</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="color:#1f377f">Module</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;@nestjs/common&#x27;</span>;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#8f08c4">import</span> { <span style="color:#1f377f">AppController</span> } <span style="color:#8f08c4">from</span> <span style="color:#a31515">&#x27;./app.controller.js&#x27;</span>;</span></span>
@@ -799,19 +799,19 @@
 <p><span id="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" name="les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas" class="odt-bookmark-anchor"></span></p>
 <h2 id="36-les-autres-decorateurs-quon-retrouvera-dans-letude-de-cas">3.6. <span style="color: #2e74b5">Les autres décorateurs qu’on retrouvera dans l’étude de cas</span></h2>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Décorateur</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>Rôle</b></i></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[<span class="nt">@Get</span>](<span class="na">url</span>), [<span class="nt">@Post</span>](<span class="na">url</span>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[</span><span class="kd">@Get</span><span class="p">](</span><span class="nx">url</span><span class="p">),</span><span class="w"> </span><span class="p">[</span><span class="kd">@Post</span><span class="p">](</span><span class="nx">url</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">associe une méthode de contrôleur à une route HTTP</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>[<span class="nt">@Param</span>](<span class="na">'x'</span>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="kd">@Param</span><span class="p">](</span><span class="s1">'x'</span><span class="p">)</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">récupère un segment variable de l’URL, ex: /getMedecinById/:id</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[@Body]()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">[</span><span class="kd">@Body</span><span class="p">]()</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">récupère le corps JSON d’une requête POST, désérialisé dans une classe</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[@Injectable]()
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">[</span><span class="kd">@Injectable</span><span class="p">]()</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">déclare un provider (service, DAO…)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div markdown="block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>[<span class="nt">@Module</span>](<span class="na">{...}</span>)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">[</span><span class="kd">@Module</span><span class="p">]({...})</span>
 </code></pre></div>
 </div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">déclare un module, assemblage de contrôleurs et de providers</div></td></tr></table>
 

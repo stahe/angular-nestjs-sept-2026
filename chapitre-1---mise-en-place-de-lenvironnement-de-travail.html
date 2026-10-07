@@ -907,36 +907,36 @@
 <span class="normal"><a href="#__codelineno-3-27">27</a></span>
 <span class="normal"><a href="#__codelineno-3-28">28</a></span>
 <span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="gh"># -----------------------------------------------------------------------</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="gh"># Fichier d'exemple de configuration.</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="gh"># Copier ce fichier en [.env] puis adapter les valeurs à votre machine.</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="gh"># Le fichier [.env] ne doit jamais être partagé ou commité (mots de passe).</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="gh"># -----------------------------------------------------------------------</span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Fichier d'exemple de configuration.</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1"># Copier ce fichier en [.env] puis adapter les valeurs à votre machine.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1"># Le fichier [.env] ne doit jamais être partagé ou commité (mots de passe).</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1"># -----------------------------------------------------------------------</span>
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="gh"># port d'écoute du serveur NestJS (le serveur Spring original écoutait sur 8080)</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>PORT=8080
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># port d'écoute du serveur NestJS (le serveur Spring original écoutait sur 8080)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="na">PORT</span><span class="o">=</span><span class="s">8080</span>
 <a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="gh"># paramètres de connexion à la base de données MySQL [dbrdvmedecins]</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>DB_HOST=localhost
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>DB_PORT=3306
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>DB_USERNAME=root
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>DB_PASSWORD=
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>DB_DATABASE=dbrdvmedecins
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="c1"># paramètres de connexion à la base de données MySQL [dbrdvmedecins]</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="na">DB_HOST</span><span class="o">=</span><span class="s">localhost</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="na">DB_PORT</span><span class="o">=</span><span class="s">3306</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="na">DB_USERNAME</span><span class="o">=</span><span class="s">root</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="na">DB_PASSWORD</span><span class="o">=</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="na">DB_DATABASE</span><span class="o">=</span><span class="s">dbrdvmedecins</span>
 <a id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="gh"># en développement uniquement : TypeORM peut créer/mettre à jour automatiquement</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="gh"># les tables à partir des entités. On le désactive ici car nous fournissons notre</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="gh"># propre script SQL [database/dbrdvmedecins.sql], comme le faisait le projet Spring original.</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>DB_SYNCHRONIZE=false
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># en développement uniquement : TypeORM peut créer/mettre à jour automatiquement</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="c1"># les tables à partir des entités. On le désactive ici car nous fournissons notre</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="c1"># propre script SQL [database/dbrdvmedecins.sql], comme le faisait le projet Spring original.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="na">DB_SYNCHRONIZE</span><span class="o">=</span><span class="s">false</span>
 <a id="__codelineno-3-21" name="__codelineno-3-21"></a>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="gh"># -----------------------------------------------------------------------</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="gh"># authentification (cf. src/auth/)</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="gh"># -----------------------------------------------------------------------</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="gh"># clé secrète utilisée pour signer/vérifier les jetons JWT - à changer</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="gh"># impérativement en production (une longue chaîne aléatoire, jamais commitée).</span>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>JWT_SECRET=change-moi-en-une-longue-chaine-aleatoire
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="gh"># durée de validité d'un jeton JWT (cf. la documentation de la librairie [ms] :</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="gh"># "60", "2h", "7d"...)</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>JWT_EXPIRES_IN=2h
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a><span class="c1"># authentification (cf. src/auth/)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a><span class="c1"># -----------------------------------------------------------------------</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a><span class="c1"># clé secrète utilisée pour signer/vérifier les jetons JWT - à changer</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a><span class="c1"># impérativement en production (une longue chaîne aléatoire, jamais commitée).</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a><span class="na">JWT_SECRET</span><span class="o">=</span><span class="s">change-moi-en-une-longue-chaine-aleatoire</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a><span class="c1"># durée de validité d'un jeton JWT (cf. la documentation de la librairie [ms] :</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a><span class="c1"># "60", "2h", "7d"...)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a><span class="na">JWT_EXPIRES_IN</span><span class="o">=</span><span class="s">2h</span>
 </code></pre></div></td></tr></table></div>
 <p>Adapter le fichier .env fraîchement créé à votre installation [MySQL] (utilisateur, mot de passe, port). Ce fichier contient aussi, depuis l’ajout de l’authentification (cf. chapitre 3), une clé JWT_SECRET : la valeur d’exemple convient pour suivre ce document, mais devra impérativement être remplacée par une chaîne aléatoire propre à vous avant tout usage réel.</p>
 <p>Démarrer ensuite le serveur :</p>
@@ -958,22 +958,22 @@
 <span class="normal"><a href="#__codelineno-5-13">13</a></span>
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
 <span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RoutesResolver</span><span class="w"> </span><span class="n">AuthController</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="p">}:</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">login</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RoutesResolver</span><span class="w"> </span><span class="n">RdvMedecinsController</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="p">}:</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllMedecins</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllClients</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAllCreneaux</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getRvMedecinJour</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="o">/</span><span class="p">:</span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getAgendaMedecinJour</span><span class="o">/</span><span class="p">:</span><span class="n">idMedecin</span><span class="o">/</span><span class="p">:</span><span class="n">jour</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getMedecinById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getClientById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getCreneauById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">getRvById</span><span class="o">/</span><span class="p">:</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">GET</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">ajouterRv</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">RouterExplorer</span><span class="w"> </span><span class="n">Mapped</span><span class="w"> </span><span class="p">{</span><span class="o">/</span><span class="n">supprimerRv</span><span class="p">,</span><span class="w"> </span><span class="n">POST</span><span class="p">}</span><span class="w"> </span><span class="n">route</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="o">[</span><span class="n">Nest</span><span class="o">]</span><span class="w"> </span><span class="n">NestApplication</span><span class="w"> </span><span class="n">Nest</span><span class="w"> </span><span class="n">application</span><span class="w"> </span><span class="n">successfully</span><span class="w"> </span><span class="n">started</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="o">[</span><span class="n">RdvMedecins</span><span class="o">]</span><span class="w"> </span><span class="n">serveur</span><span class="w"> </span><span class="n">NestJS</span><span class="w"> </span><span class="n">démarré</span><span class="w"> </span><span class="n">sur</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="c1">//localhost:8080</span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>[Nest] RoutesResolver AuthController {/}:
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>[Nest] RouterExplorer Mapped {/login, POST} route
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>[Nest] RoutesResolver RdvMedecinsController {/}:
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>[Nest] RouterExplorer Mapped {/getAllMedecins, GET} route
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>[Nest] RouterExplorer Mapped {/getAllClients, GET} route
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>[Nest] RouterExplorer Mapped {/getAllCreneaux/:idMedecin, GET} route
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>[Nest] RouterExplorer Mapped {/getRvMedecinJour/:idMedecin/:jour, GET} route
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>[Nest] RouterExplorer Mapped {/getAgendaMedecinJour/:idMedecin/:jour, GET} route
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>[Nest] RouterExplorer Mapped {/getMedecinById/:id, GET} route
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>[Nest] RouterExplorer Mapped {/getClientById/:id, GET} route
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>[Nest] RouterExplorer Mapped {/getCreneauById/:id, GET} route
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>[Nest] RouterExplorer Mapped {/getRvById/:id, GET} route
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>[Nest] RouterExplorer Mapped {/ajouterRv, POST} route
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>[Nest] RouterExplorer Mapped {/supprimerRv, POST} route
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>[Nest] NestApplication Nest application successfully started
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>[RdvMedecins] serveur NestJS démarré sur http://localhost:8080
 </code></pre></div></td></tr></table></div>
 <p>Ce relevé de console confirme que le serveur écoute bien sur le port 8080 - <strong>exactement le même port que le serveur Spring Boot du document original</strong>, choisi volontairement pour cette raison.</p>
 <p><span id="tester-le-serveur-avec-un-navigateur" name="tester-le-serveur-avec-un-navigateur" class="odt-bookmark-anchor"></span></p>
